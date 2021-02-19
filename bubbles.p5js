@@ -1,0 +1,52 @@
+
+//https://editor.p5js.org/navyanthkusam/sketches/Ma648_0EP
+//let bubble1, bubble2 ;
+let bubbles = [];
+var N = 10;
+
+
+function setup() {
+  createCanvas(600, 400);
+
+}
+
+
+function mousePressed() {
+  let r = random(10, 20);
+  let b = new Bubble(mouseX, mouseY, r, mouseX);
+  bubbles.push(b);
+
+}
+
+function draw() {
+  background(0);
+
+  for (var b of bubbles) {
+    b.move();
+    b.show();
+  }
+
+}
+
+
+class Bubble {
+
+  constructor(x, y, r, clr) {
+    this.x = x;
+    this.y = y;
+    this.r = r;
+    this.clr = clr;
+  }
+
+  move() {
+    this.x = this.x + random(-5, 5);
+    this.y = this.y + random(-5, 5);
+  }
+
+  show() {
+    stroke(255);
+    strokeWeight(1);
+    fill(this.clr, 0, this.clr);
+    ellipse(this.x, this.y, this.r * 2);
+  }
+}
