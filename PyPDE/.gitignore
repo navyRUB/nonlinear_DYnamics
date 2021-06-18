@@ -1,0 +1,10 @@
+build
+debug
+dist
+docs/_build
+pypde/build
+PyPDE.egg-info
+.eggs
+.vscode
+*.DS_Store
+*.pyc
